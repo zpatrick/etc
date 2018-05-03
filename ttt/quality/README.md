@@ -1,7 +1,7 @@
 # Quality
 
 The goal of this Tech Talk is to present some ideas and processes that I have found useful in the pursuit of writing high-quality code. 
-My hope is that others will try some of these processes, and then pick and choose those that they find work well for them. 
+My hope is that others will try some of these ideas, and then pick and choose those that they find work well for them. 
 I also think it's worth mentioning what this Tech Talk is _not_ trying to be:
 * A comprensive list of all ideas, processes, etc. that lend themselves to writing high-quality code
 * A formula (e.g. _"If you follow these suggestions, then you will have high-quality code"_)
@@ -28,8 +28,26 @@ It is typically desirable to have high levels of cohesion.
 
 **Extensibility**: The degree to which a system can be extended for additional functionality, and the amount of effort required to implement the extension. 
 
-# Steps
-- care
+# Approach 
+This section lists some ideas for approaching software design and implementation. 
+I put a little bit of thought into the order of these ideas, 
+but the order is really meant to be more a suggestion than a requirement.
+
+### Care
+I know, this is one of those "duh" suggestions, but hear me out: 
+The best tips in the world aren't going to help if you don't care about the quality of your own work. 
+We all have deadlines, projects we don't like, lack of sleep, bad codebases ...the list goes on.
+There are a million excuses not to care, but I think it's almost impossible to write high-quality code without caring. 
+On the bright side, if you're reading this, there's a good chance you at least care a little bit. 
+Being in the proper mindset before writing code can go a long way. 
+
+### Carry a Large Toolbelt 
+
+### Think Abstractly
+
+### Start at the End
+
+### Iterate, Iterate, Iterate
 - have a large toolbelt (know tricks, see other's implementations, etc.)
 - think abstractly
 - start at the end (consumers and testers, code IS ux)

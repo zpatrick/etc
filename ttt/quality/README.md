@@ -21,10 +21,10 @@ therefore simplicity should be a key goal in design and unnecessary complexity s
 The DRY principle aims at reducing repetition and redundancy by using patterns and abstractions. 
 
 **Coupling**: The degree to which modules depend on each other to function correctly.
-It is typically desirable to have a low levels of coupling. 
+It is typically desirable to have low levels of coupling. 
 
 **Cohesion**: The degree to which the elements inside of a module belong together. 
-It is typically desirable to have a high levels of cohesion. 
+It is typically desirable to have high levels of cohesion. 
 
 **Extensibility**: The degree to which a system can be extended for additional functionality, and the amount of effort required to implement the extension. 
 

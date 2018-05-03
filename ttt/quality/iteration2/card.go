@@ -4,10 +4,10 @@ import "fmt"
 
 //go:generate stringer -type=Face
 
-type Face int
+type Rank int
 
 const (
-	Two Face = 2 << iota
+	Two Rank = 2 << iota
 	Three
 	Four
 	Five
@@ -33,9 +33,17 @@ const (
 
 type Card struct {
 	Suite Suite
-	Face  Face
+	Rank Rank
 }
 
 func (c *Card) String() string {
-	return fmt.Sprintf("%s of %s", c.Face, c.Suite)
+	return fmt.Sprintf("%s of %s", c.Rank, c.Suite)
+}
+
+func (c *Card) IsFace() bool {
+    return IsFace(c.Rank)
+}
+
+func IsFace(r Rank) bool {
+    return r >= Jack
 }

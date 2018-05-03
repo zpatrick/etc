@@ -41,7 +41,15 @@ There are a million excuses not to care, but I think it's almost impossible to w
 On the bright side, if you're reading this, there's a good chance you at least care a little bit. 
 Being in the proper mindset before writing code can go a long way. 
 
-### Carry a Large Toolbelt 
+### Know the Language 
+Become an expert (or at least very good) in the language you are working in. 
+I know that's easier said than done, but it's crucial. 
+Here are some things that I've found useful when trying to master a language:
+* Read a book written for that language (bonus if there is an "official" book for the language)
+* Read articles and tutorials online (Google and Reddit are your friends there)
+* Pair program with someone who is already an expert on the language (obviously, not applicable for everyone)
+* View the source code of popular projects written in that language
+* Practice writing projects in that language ([CodeKata](http://codekata.com/) is one of many good sources for practice ideas)
 
 ### Think Abstractly
 

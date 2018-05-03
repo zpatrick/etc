@@ -54,16 +54,16 @@ Here are some things that I've found useful when trying to master a language:
 ### Think Abstractly
 When gathering requirements, it's easy to focus on the immediate and most obvious needs while forgetting to look at the bigger picture. 
 It's important to remember to think abstractly first, then start to home in on more specific requirements later. 
-Personally, I try to think about what the system needs to _do_ in the abstract sense, then come up with some solutions, and then choose the best option I can come up with. 
+Personally, I try to think about what the system needs to _do_ in the abstract sense, then come up with some solutions, and then choose the best option I can come up with. Let's do a simple example:
 
-Let's do a simple example: say you have a service that is currently hardcoded to run on port 80. 
+Say you have a service that is currently hardcoded to run on port 80. 
 Now, there is a need to run it on either port 80 or port 9090. 
 The first thought may be something like:
 
 _"Since there are two options, I'll use a boolean to switch between port 80 or 9090"_
 
 That will solve your immediate needs, but probably not in the best way. 
-What if it turns out instead of 9090 we need 8080?
+What if it turns out instead of port 9090, we need to run on port 8080?
 What if we need to add more ports in the future?
 This solution doesn't handle those scenarios very well. 
 Let's try thinking abstractly. 
@@ -74,8 +74,10 @@ Well, we know it needs to be able to run on port 80 or 9090, but in the abstract
 _The system needs to be able to run on a port of our choosing_
 
 Now we can start to home in on some possible solutions, like using an integer input for the port.
-This makes the system more **extensible** since it allows any integer value to be specified as the port. 
+Using an integer input for the port input makes the system more **extensible** 
+since it allows us to specify any possible port to run on. 
 
+I recognize this is a pretty simple example, but the  
 
 ### Start at the End
 

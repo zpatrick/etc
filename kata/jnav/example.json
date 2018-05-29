@@ -1,0 +1,26 @@
+{
+	"cars": [
+  		{
+			"make": "toyota",
+			"model": "camry"
+		},
+		{
+			"make": "subaru",
+                        "model": "impreza"
+		}
+	],
+	"trucks": [
+                {
+                        "make": "toyota",
+                        "model": "tacoma"
+                },
+                {
+                        "make": "chevy",
+                        "model": "silverado"
+                },
+		{
+                        "make": "ford",
+                        "model": "f150"
+                }
+        ]
+}

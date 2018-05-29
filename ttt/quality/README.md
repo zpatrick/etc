@@ -70,16 +70,24 @@ Let's try thinking abstractly.
 
 **What does the system need to _do_?**
 Well, we know it needs to be able to run on port 80 or 9090, but in the abstract sense: 
-
 _The system needs to be able to run on a port of our choosing_
 
 Now we can start to home in on some possible solutions, like using an integer input for the port.
 Using an integer input for the port input makes the system more **extensible** 
 since it allows us to specify any possible port to run on. 
 
-I recognize this is a pretty simple example, but the  
+I recognize this is a pretty simple example, but the idea holds just the same. 
+Don't forget to take a step back from the problem and see the bigger picture. 
 
 ### Start at the End
+The point of all software is to provide a better experience to the end user. 
+It's pretty common to start with the end experience designing programs, 
+but I often see developers forgetting to do this when writing code. 
+Remember, the point of code is the same as any other piece of software:
+to provide a better experience to the end user (there's a reason we don't write code in machine language). 
+It's just that the end user of code is other developers. 
+
+
 
 ### Iterate, Iterate, Iterate
 

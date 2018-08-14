@@ -6,8 +6,8 @@
 
 
 ## Overview
-RP (short for "replace") is a simple text replacer tool. Think `sed` but for simple 
+RP (short for "replace") is a simple text replacer tool. Think `sed` but simpler. 
 
 ## License
 This work is published under the MIT license.
-Please see the [LICENSE](https://github.com/zpatrick/rp/blob/master/LICENSE) file for details.
+Please see the [LICENSE](LICENSE) file for details.

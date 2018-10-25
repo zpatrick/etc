@@ -33,7 +33,7 @@ const (
 
 type Card struct {
 	Suite Suite
-	Rank Rank
+	Rank  Rank
 }
 
 func (c *Card) String() string {
@@ -41,9 +41,9 @@ func (c *Card) String() string {
 }
 
 func (c *Card) IsFace() bool {
-    return IsFace(c.Rank)
+	return IsFace(c.Rank)
 }
 
 func IsFace(r Rank) bool {
-    return r >= Jack
+	return r >= Jack
 }

@@ -41,9 +41,9 @@ type Cache struct {
 	items map[string]infer
 }
 
-// PROBLEMS: How would the compiler know what type use during initialization, Set, and Get? 
-// SOLUTION: Maybe it all goes back to initialization? 
-// That may not work with Set.      
+// PROBLEMS: How would the compiler know what type use during initialization, Set, and Get?
+// SOLUTION: Maybe it all goes back to initialization?
+// That may not work with Set.
 func NewCache() *Cache {
 	return &Cache{
 		items: new(map[string]infer),
@@ -54,7 +54,7 @@ func (c *Cache) Set(key string, v infer) {
 	c.items[key] = v
 }
 
-// how would the compiler know that these match? 
+// how would the compiler know that these match?
 func (c *Cache) Get(key string) infer {
 	return c.items[key]
 }

@@ -24,11 +24,11 @@ type Card struct {
 Deck objects
 ------------
 We know a deck of cards is just a collection of 52 cards containing one of each suit and rank.
-With that in mind, we don't really need a Deck object; we can just treat a []Card as a deck. 
+With that in mind, we don't really need a Deck object; we can just treat a []Card as a deck.
 That seems to make things pretty simple.
 */
 
-// NewDeck will create a standard, 52-card deck.  
+// NewDeck will create a standard, 52-card deck.
 func NewDeck() []*Card {
 	suits := []string{"Clubs", "Diamonds", "Hearts", "Spades"}
 	ranks := []string{"Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King", "Ace"}
@@ -49,7 +49,7 @@ Shuffling
 ---------
 We know users will want to shuffle their deck at some point, so we just add a helper function here
 */
-  
+
 func NewShuffledDeck() []*Card {
 	deck := NewDeck()
 	for i := 0; i < 52; i++ {

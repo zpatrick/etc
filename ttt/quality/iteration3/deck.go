@@ -1,5 +1,7 @@
 package cards
 
+import "math/rand"
+
 type Deck struct {
 	cards []Card
 }

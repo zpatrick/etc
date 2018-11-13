@@ -10,6 +10,39 @@ type Node struct {
 	Left, Right *Node
 }
 
+func (n *Node) DFT() {
+	fmt.Println(n.ID)
+	if n.Left != nil {
+		n.Left.DFT()
+	}
+	if n.Right != nil {
+		n.Right.DFT()
+	}
+}
+
+func (n *Node) BFT() {
+	parents := []*Node{n}
+	fmt.Printf("Level 0: %v\n", n.ID)
+	for level := 1; len(parents) > 0; level++ {
+		var children []*Node
+		for _, p := range parents {
+			for _, c := range []*Node{p.Left, p.Right} {
+				if c != nil {
+					children = append(children, c)
+				}
+			}
+		}
+
+		fmt.Printf("Level %d: ", level)
+		for _, c := range children {
+			fmt.Printf("%v ", c.ID)
+		}
+		fmt.Println()
+
+		parents = children
+	}
+}
+
 func (n *Node) ShortestPath(to int) ([]int, bool) {
 	path := []int{n.ID}
 	if n.ID == to {
@@ -177,4 +210,8 @@ func main() {
 	}
 
 	fmt.Println("Is BST:", IsBST(root))
+	fmt.Println("DFT:")
+	root.DFT()
+	fmt.Println("BFT:")
+	root.BFT()
 }

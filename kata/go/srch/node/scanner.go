@@ -29,7 +29,7 @@ func (s *Scanner) Move(count int) bool {
 	var moved int
 	return s.TraverseFunc(func(b byte) bool {
 		moved++
-		return moved < count
+		return moved >= count
 	})
 }
 
@@ -64,7 +64,7 @@ func (s *Scanner) TraverseFunc(fn func(b byte) bool) bool {
 
 		fmt.Printf("Node: %v\n", s.node.Data)
 		for ; s.index < len(s.node.Data); s.index++ {
-			fmt.Printf("node[%v]: %s\n", s.index, string(s.node.Data[s.index]))
+			fmt.Printf("node[%d]: %s\n", s.index, string(s.node.Data[s.index]))
 			if fn(s.node.Data[s.index]) {
 				return true
 			}

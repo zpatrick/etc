@@ -1,0 +1,60 @@
+Intro to Go
+
+Zack Patrick
+zack.patrick@outreach.io
+
+* Stuff to add
+Go proverbs: https://go-proverbs.github.io/
+How to use godoc.org locally
+Go 1 vs Go 2 
+compatibility prmoise
+the go tool, e.g. `go build, go run, go fmt`
+
+
+
+* Resources
+
+.link https://golang.org/ Golang.org
+.link https://tour.golang.org/ A Tour of Go
+.link https://play.golang.org/ Go Playground
+.link https://gobyexample.com/ Go by Example
+.link https://golang.org/doc/effective_go.html Effective Go
+.link https://godoc.org/ GoDoc
+
+
+* Background
+.link https://golang.org/doc/faq#Origins Origins
+
+- Designed by Robert Griesemer, Rob Pike and Ken Thompson of Google in 2007. 
+- Officially released in 2009. 
+
+.link https://talks.golang.org/2012/splash.article 
+
+
+* TODO:
+- Packages / Modules
+- Builtin types
+- interfaces
+- Modules
+- Imports
+
+* Packages
+
+- Package up common units of code. 
+- Analogous to gems in Ruby. 
+- Executables always start in the `main` package. 
+- Are always in the same directory.
+- Best Practice: always lowercase, no underscores, e.g. `http`, `httptest`
+
+* Executables
+
+Executables always start in the `main` function of the `main` package:
+
+.play -edit -numbers examples/executable.go 
+
+* Imports
+
+
+Example
+
+Public vs. Private

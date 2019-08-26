@@ -1,3 +1,0 @@
-# Functional Options
-
-- todo -

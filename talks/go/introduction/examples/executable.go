@@ -1,7 +1,11 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"os"
+)
 
 func main() {
-	fmt.Println("Hello, World")
+	fmt.Println("Welcome to the official Hoobastank fan club!")
+	os.Exit(0)
 }

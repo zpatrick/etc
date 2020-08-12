@@ -1,16 +1,12 @@
 Intro to Go
 
 Zack Patrick
+August, 2019
 zack.patrick@outreach.io
 
-* Stuff to add
-Go proverbs: https://go-proverbs.github.io/
-How to use godoc.org locally
-Go 1 vs Go 2 
-compatibility prmoise
-the go tool, e.g. `go build, go run, go fmt`
-
-
+* Introduction
+This talk is meant to get you up and running with Go. 
+Not mean to be a deep dive, just to get you familiar with concepts. 
 
 * Resources
 
@@ -20,41 +16,181 @@ the go tool, e.g. `go build, go run, go fmt`
 .link https://gobyexample.com/ Go by Example
 .link https://golang.org/doc/effective_go.html Effective Go
 .link https://godoc.org/ GoDoc
-
-
-* Background
-.link https://golang.org/doc/faq#Origins Origins
-
-- Designed by Robert Griesemer, Rob Pike and Ken Thompson of Google in 2007. 
-- Officially released in 2009. 
-
-.link https://talks.golang.org/2012/splash.article 
-
-
-* TODO:
-- Packages / Modules
-- Builtin types
-- interfaces
-- Modules
-- Imports
+.link https://go-proverbs.github.io/ Go Proverbs
 
 * Packages
+Packages are common units of Go code grouped together. 
 
-- Package up common units of code. 
-- Analogous to gems in Ruby. 
-- Executables always start in the `main` package. 
-- Are always in the same directory.
-- Best Practice: always lowercase, no underscores, e.g. `http`, `httptest`
+- They exist in the same directory. 
+- The package is declared at the top of every file. 
+- They have public and private members. 
+- It's best practice to name packages with only lowercase characters and no underscores (e.g. "http" and "httptest").  
 
 * Executables
+Executables always start in the `main` function of the `main` package.
+Programs will exit 0 unless explicity told otherwise (e.g. `os.Exit(1)`)
 
-Executables always start in the `main` function of the `main` package:
+.play -edit examples/executable.go 
 
-.play -edit -numbers examples/executable.go 
+* Functions 
+Functions start with the `func` identifier followed by the name, parameters, and return values. 
+
+.play -edit examples/functions_simple.go
+
+* Function Parameters
+- Parameters are declared with the parameter name followed by the type. 
+- To save space, consecutive parameters of the same type only need to declare the type after the last parameter. 
+- Parameters can be declared by _only_ specifying the types, but this is rarely used. 
+
+.play -edit examples/functions_parameters.go
+
+* Variadic Functions
+Variadic Functions take an arbitrary number of arguments of the same type.
+
+.play -edit examples/functions_variadic.go
+
+* Return Values
+
+- Functions have 0-many return values.
+- Return values _can_ be named, but it's generally best practice not to. 
+- If the function returns an `error`, it should be the last value returned. 
+
+.play -edit examples/functions_return.go /START OMIT/,/END OMIT/
+
 
 * Imports
+- Imports are declared at the top of each Go file after the `package` declaration. 
+- Imports are scoped for the file in which they are declared.
+- Unused imports will cause a compilation error. 
+- With the exception of the packages in the standard library, import paths start from the repo level (e.g. github.com/user/repo). 
+
+    package main 
+    
+    import(
+        "github.com/hoobastank/fanclub/albums"
+        "fmt"
+    )
+
+    func main() {
+        albums.Play()
+    }
 
 
-Example
+* Builtin Types
+.link https://golang.org/pkg/go/types/
 
-Public vs. Private
+Most commonly used basic types are: `int`, `float64`, `bool`, `string`, `map`, `slice`, and `error`. 
+Variables can be declared with explicit types using the `var` keyword, or implicitly declared using `:=`. 
+
+  x := 1
+  var x int 
+  var x int = 1
+
+* *ZP's Hot Take* - Which type of declaration to use? 
+
+- The long hand version (var x int) must be used for package-level variables, so you don't have an option there. 
+- Prefer the shorthand (x := 1) in functions. 
+- Using the long hand version in functions tends to catch developer's eyes as they scan your code. I typically use this as a way to say something important about that variable (examples on next slide).
+
+* 
+_I_expect_this_variable_to_be_initialized_based_on_some_conditional_logic._
+
+  var size string
+  switch {
+    case weight < 100:
+      size = "small"
+    case weight < 150:
+      size = "medium"
+    default:
+      size = "large"
+  }
+
+_This_variables's_zero-value_is_important_
+
+  var count int
+  for _, v := range values {
+    count += v.Count()
+  }
+
+* Maps 
+Maps (hashes) map keys to values. The type of key and value must be declared:
+
+.play -edit examples/maps.go
+
+* Slices
+While Go does have arrays, we almost always uses slices instead.
+Slices can be thought of as lists in other languages. 
+
+.play -edit examples/slices.go
+
+* Errors 
+
+    
+
+* Builtin Functions 
+make 
+  - maps 
+  - slices 
+
+
+new 
+len 
+cap 
+del
+close 
+copy
+panic
+recover
+
+* Public vs. Private
+- Public/Exported objects begin with a capital letter.
+- Private/Unexported objects begin with a lower-case letter. 
+- Objects can reference anything within the same package. 
+
+    package albums
+
+    func Play() {
+        playTheReason()
+        playSameDirection()
+    }
+
+    func playTheReason() { }
+
+    func playSameDirection() { }
+    
+
+
+Functions, methods, types, 
+
+
+* TODO
+- Go run, go build
+- Types
+- Slices & append, cap, len
+- Maps & delete
+- Looping: for, range
+- Sorting 
+- Importing
+- Structs
+- Structs + Methods
+- Structs + Constructors
+- Interfaces
+- Named types 
+- Named types + Methods
+- Named types as interfaces
+- Functions
+- Functions as parameters, closures
+- Functions as interfaces
+- Errors
+- Named types as errors 
+- Sentinal, other error types 
+
+
+
+
+* Stuff to add
+Go proverbs: https://go-proverbs.github.io/
+How to use godoc.org locally
+Go 1 vs Go 2 
+compatibility prmoise
+the go tool, e.g. `go build, go run, go fmt`
